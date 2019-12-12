@@ -1,11 +1,10 @@
 
  var w = 850;
  var h = 600;
- var svg = d3.select("#sexualmap")
+ const ssvg = d3.select("#sexualmap")
  .append("svg")
  .attr("preserveAspectRatio", "xMinYMin meet")
- .attr("viewBox", "0 0 " + w + " " + h)
- .classed("svg-content", true);
+ .attr("viewBox", "0 0 " + w + " " + h);
 
  var projection = d3.geoMercator().translate([w/2, h/2]).scale(200000).center([-111.93,33.39]);
  var path = d3.geoPath().projection(projection);
@@ -35,7 +34,7 @@ d3.json("https://raw.githubusercontent.com/WoWsj/visualize_practice/master/Zonin
 
 
     
-    svg.selectAll("path")
+    ssvg.selectAll("path")
     .data(value.features)
     .enter()
     .append("path")
@@ -43,7 +42,7 @@ d3.json("https://raw.githubusercontent.com/WoWsj/visualize_practice/master/Zonin
     .attr("stroke","white")
     .attr("d", path);
 
-    svg.selectAll("circle")
+    ssvg.selectAll("circle")
     .data(arry)
     .enter()
     .append("circle")
@@ -54,7 +53,7 @@ d3.json("https://raw.githubusercontent.com/WoWsj/visualize_practice/master/Zonin
     .attr("fill", "red")
     .attr("id","sexualother");
 
-    var homedata = svg.selectAll("circle")
+    var homedata = ssvg.selectAll("circle")
     .data(home);
 
     homedata.enter()
@@ -68,23 +67,17 @@ d3.json("https://raw.githubusercontent.com/WoWsj/visualize_practice/master/Zonin
     .merge(homedata);
 
     d3.select("#sexualhome").on("click", function(){
-		// Determine if current line is visible
 		var active   = home.active ? false : true ,
 		  newOpacity = active ? 0 : 1;
-		// Hide or show the elements
 		d3.selectAll("circle#sexualhome").style("opacity", newOpacity);
-		// Update whether or not the elements are active
 		home.active = active;
     })
     
     d3.select("#sexualelse").on("click", function(){
-		// Determine if current line is visible
-		var active   = other.active ? false : true ,
-		  newOpacity = active ? 0 : 1;
-		// Hide or show the elements
+		var sctive   = other.sctive ? false : true ,
+		  newOpacity = sctive ? 0 : 1;
 		d3.selectAll("circle#sexualother").style("opacity", newOpacity);
-		// Update whether or not the elements are active
-		other.active = active;
+		other.sctive = active;
 	})
     
     });

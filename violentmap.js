@@ -1,7 +1,7 @@
 
  var w = 850;
  var h = 600;
- var svg = d3.select("#violentmap")
+ const svg = d3.select("#violentmap")
  .append("svg")
  .attr("preserveAspectRatio", "xMinYMin meet")
  .attr("viewBox", "0 0 " + w + " " + h);
@@ -61,22 +61,16 @@ d3.json("https://raw.githubusercontent.com/WoWsj/visualize_practice/master/Zonin
     .merge(homedata);
 
     d3.select("#house").on("click", function(){
-		// Determine if current line is visible
 		var active   = home.active ? false : true ,
 		  newOpacity = active ? 0 : 1;
-		// Hide or show the elements
 		d3.selectAll("circle#home").style("opacity", newOpacity);
-		// Update whether or not the elements are active
 		home.active = active;
     })
     
     d3.select("#else").on("click", function(){
-		// Determine if current line is visible
 		var active   = other.active ? false : true ,
 		  newOpacity = active ? 0 : 1;
-		// Hide or show the elements
 		d3.selectAll("circle#other").style("opacity", newOpacity);
-		// Update whether or not the elements are active
 		other.active = active;
 	})
     });
