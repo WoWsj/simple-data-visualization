@@ -1,6 +1,6 @@
 # visualize_Assignment
 
-https://wowsj.github.io/visualize_Assignment/index.html
+https://wowsj.github.io/simple-data-visualization/
 을 통해 페이지를 볼 수 있습니다.
 
 이 코드는 2019년 2학기 데이터시각화(세종대학교/장윤 교수님) 수업 과제로 사용한 데이터 분석 과제입니다.
@@ -17,7 +17,7 @@ https://wowsj.github.io/visualize_Assignment/index.html
 
 ------------------------------------------------------------------------------------------------------
 you can see the project on this url:
-https://wowsj.github.io/visualize_Assignment/index.html
+https://wowsj.github.io/simple-data-visualization/
 
 This code is my data analysis assignment for Data visualization(Sejong univ / Prof. Jang yun).
 
