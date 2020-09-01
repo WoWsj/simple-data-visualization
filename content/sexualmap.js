@@ -10,9 +10,9 @@
  var path = d3.geoPath().projection(projection);
     
 // load data  
-d3.json("https://raw.githubusercontent.com/WoWsj/visualize_practice/master/Zoning_Districts.geojson").then(function(value)
+d3.json("./Zoning_Districts.geojson").then(function(value)
 {
-    var police = d3.csv("https://raw.githubusercontent.com/WoWsj/visualize_practice/master/result.csv").then(function(data)
+    var police = d3.csv("./result.csv").then(function(data)
     {
         var arry = new Array();
         var home = new Array();
